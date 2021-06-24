@@ -15,7 +15,7 @@ const posts = {};
  app.get('/posts',(req, res )=> {
     res.send(posts);
  });
-
+//post comment
  app.post('/posts',(req, res )=> {
     const id = randomBytes(4).toString('hex')
     const {title} = req.body
