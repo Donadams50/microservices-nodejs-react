@@ -1,10 +1,8 @@
 const cors = require('cors')
-const dotenv = require('dotenv')
 const path = require('path')
 const {randomBytes} = require('crypto')
 const bodyparser = require('body-parser')
 const express = require('express')
-dotenv.config()
 const app = express()
 const port = process.env.PORT || 8080
 app.use(bodyparser.json())
@@ -18,7 +16,7 @@ const posts = {};
     res.send(posts);
  });
 
-  app.post('/posts',(req, res )=> {
+ app.post('/posts',(req, res )=> {
     const id = randomBytes(4).toString('hex')
     const {title} = req.body
 
